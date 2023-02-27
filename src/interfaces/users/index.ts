@@ -15,13 +15,13 @@ export interface IUser {
 }
 
 export interface IUserResponse {
-  id: string;
-  name: string;
-  email: string;
-  isAdm: boolean;
-  createdAt: Date;
-  updatedAt: Date;
-  isActive: boolean;
+  id: string | undefined;
+  name: string | undefined;
+  email: string | undefined;
+  isAdm: boolean | undefined;
+  createdAt: Date | undefined;
+  updatedAt: Date | undefined;
+  isActive: boolean | undefined;
 }
 
 export interface IUserLogin {
