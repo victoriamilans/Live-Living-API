@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { ICategoryRequest } from "../../interfaces/categories";
+import { ICategory, ICategoryRequest } from "../../interfaces/categories";
 import createCategoryService from "../../services/Categories/createCategory.service";
 
 const createCategoryController = async (req: Request, res: Response) => {
