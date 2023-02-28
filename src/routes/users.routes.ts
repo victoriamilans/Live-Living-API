@@ -8,7 +8,7 @@ import ensureDataIsValidMiddleware from "../middlewares/ensureDataIsValid.middle
 import ensureUserExistsMiddleware from "../middlewares/ensureUserExists.middleware";
 import ensureUserIsAdminMiddleware from "../middlewares/ensureUserIsAdmin.middleware";
 import validateEditUserSchemaMiddleware from "../middlewares/validatedEditUserSchema.middleware";
-import { updateUsers, user } from "../serializers/user.serializers";
+import { updateUsers, user } from "../serializers/user.serializer";
 
 const userRoutes = Router();
 

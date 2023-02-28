@@ -33,7 +33,7 @@ class Properties {
   @UpdateDateColumn()
   updatedAt: Date;
 
-  @OneToOne(() => Addresses)
+  @OneToOne(() => Addresses, { eager: true })
   @JoinColumn()
   address: Addresses;
 

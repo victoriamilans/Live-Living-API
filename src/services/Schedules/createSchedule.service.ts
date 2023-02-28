@@ -8,7 +8,7 @@ import { IScheduleRequest } from "../../interfaces/schedules";
 const createScheduleService = async (
   { date, hour, propertyId }: IScheduleRequest,
   userId: string
-) => {
+): Promise<Object> => {
   const userRepository = AppDataSource.getRepository(User);
   const propertiesRepository = AppDataSource.getRepository(Properties);
   const schedulesRepository = AppDataSource.getTreeRepository(
@@ -42,18 +42,14 @@ const createScheduleService = async (
 
   const verifyHour = hour.split(":");
 
-  if (+verifyHour[0] >= 18) {
-    throw new appError("Invalid hour", 400);
-  }
-
-  if (+verifyHour[0] <= 8) {
+  if (+verifyHour[0] >= 18 || +verifyHour[0] <= 8) {
     throw new appError("Invalid hour", 400);
   }
 
   const scheduling = new Date(date).getDay();
 
   if (scheduling == 6 || scheduling == 0) {
-    throw new appError("Invalid hour", 400);
+    throw new appError("Invalid date", 400);
   }
 
   await AppDataSource.createQueryBuilder()

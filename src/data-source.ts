@@ -10,10 +10,20 @@ const dataSourceConfig = (): DataSourceOptions => {
     "./migrations/**.{ts,js}"
   );
 
-  const dbUrl: string | undefined = process.env.DATABASE_URL;
+  const dbUrl: string | undefined = process.env.PGDATABASE;
+  const nodeEnv: string | undefined = process.env.NODE_ENV;
 
   if (!dbUrl) {
     throw new Error("Env var DATABASE_URL does not exists");
+  }
+
+  if (nodeEnv === "production") {
+    return {
+      type: "postgres",
+      url: dbUrl,
+      entities: [entitiesPath],
+      migrations: [migrationsPath],
+    };
   }
 
   return {

@@ -1,10 +1,13 @@
 import { AppDataSource } from "../../data-source";
 import Properties from "../../entities/properties.entity";
-import { IPropertyRequest } from "../../interfaces/properties";
 
-const listPropertiesService = async (): Promise<any> => {
+const listPropertiesService = async (): Promise<Properties[]> => {
   const propertiesRepository = AppDataSource.getRepository(Properties);
-  const allProperties = await propertiesRepository.find();
+  const allProperties = await propertiesRepository.find({
+    relations: {
+      address: true,
+    },
+  });
 
   return allProperties;
 };

@@ -1,6 +1,4 @@
-import { IUserRequest, IUserResponse } from "../../interfaces/users";
 import { AppDataSource } from "../../data-source";
-import User from "../../entities/user.entity";
 import { appError } from "../../errors";
 import { IPropertyRequest } from "../../interfaces/properties";
 import Properties from "../../entities/properties.entity";

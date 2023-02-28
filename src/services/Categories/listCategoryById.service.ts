@@ -1,9 +1,7 @@
 import { AppDataSource } from "../../data-source";
 import Categories from "../../entities/categories.entity";
-import Properties from "../../entities/properties.entity";
 import { appError } from "../../errors";
 import { ICategoryRequest } from "../../interfaces/categories";
-import { properties } from "../../serializers/properties.serializer";
 
 const listCategoryByIdService = async (
   id: string

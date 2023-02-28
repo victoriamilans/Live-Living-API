@@ -5,7 +5,7 @@ import listCategoriesByIdController from "../controllers/Categories/listCategory
 import ensureAuthMiddleware from "../middlewares/ensureAuth.middleware";
 import ensureDataIsValidMiddleware from "../middlewares/ensureDataIsValid.middleware";
 import ensureUserIsAdminMiddleware from "../middlewares/ensureUserIsAdmin.middleware";
-import { category } from "../serializers/categories.serializers";
+import { category } from "../serializers/categories.serializer";
 
 const categoriesRoutes = Router();
 

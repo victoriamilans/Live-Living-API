@@ -1,7 +1,6 @@
 import { Router } from "express";
 import createScheduleController from "../controllers/Schedules/createSchedule.controller";
 import listSchedulesController from "../controllers/Schedules/listSchedules.controller";
-
 import ensureAuthMiddleware from "../middlewares/ensureAuth.middleware";
 import ensureUserIsAdminMiddleware from "../middlewares/ensureUserIsAdmin.middleware";
 

@@ -8,7 +8,10 @@ const validateEditUserSchemaMiddleware =
       req.body.isActive !== undefined ||
       req.body.id !== undefined
     ) {
-      throw new appError("Unauthorized", 401);
+      throw new appError(
+        "You do not have permission to change one of this values",
+        401
+      );
     }
 
     return next();

@@ -16,7 +16,7 @@ const ensureUserExistsMiddleware = async (
   }
 
   if (req.params.id !== req.user.id && !verifyUserAdmin?.isAdm) {
-    throw new appError("Missing permission", 401);
+    throw new appError("You do not have permission", 401);
   }
 
   return next();

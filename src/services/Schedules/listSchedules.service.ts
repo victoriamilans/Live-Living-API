@@ -1,3 +1,4 @@
+import _ from "lodash";
 import { AppDataSource } from "../../data-source";
 import Properties from "../../entities/properties.entity";
 import { appError } from "../../errors";
@@ -13,13 +14,20 @@ const listSchedulesService = async (
     .getOne();
 
   if (!(await verifyPropertyExist)) {
-    throw new appError("Schedule does not exist", 404);
+    throw new appError("Property not found", 404);
   }
 
-  const schedules = await propertiesRepository.findOne({
+  let schedules = await propertiesRepository.findOne({
     relations: { schedules: true },
     where: { id: PropertyId },
   });
+
+  if (schedules) {
+    schedules.schedules[0].user = _.omit(
+      schedules?.schedules[0].user,
+      "password"
+    );
+  }
 
   return schedules;
 };
