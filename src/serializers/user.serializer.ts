@@ -3,10 +3,10 @@ import { SchemaOf } from "yup";
 import { IUserRequest, IUserResponse, IUserUpdate } from "../interfaces/users";
 
 export const user: SchemaOf<IUserRequest> = yup.object().shape({
-  name: yup.string().required("Nome é obrigatóirio"),
-  email: yup.string().email().required("Email é obriatório"),
-  password: yup.string().required("senha é obrigatória"),
-  isAdm: yup.boolean().required("isAdm é obriatório"),
+  name: yup.string().required("name is required"),
+  email: yup.string().email().required("email is required"),
+  password: yup.string().required("password is required"),
+  isAdm: yup.boolean().required("isAdm is required"),
 });
 
 export const userToReturn: SchemaOf<IUserResponse> = yup.object().shape({
