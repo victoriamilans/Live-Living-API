@@ -2,6 +2,7 @@
 
 ### Live Living é uma api que tem como objetivo gerenciar uma imobiliária através de um CRUD de usuários e rotas de GET/POST de propriedades, categorias e agendamentos.
 [API Doc](https://live-living-api-doc.vercel.app/)
+A URL base da aplicação: https://localhost:3000
 
 ---
 
@@ -34,8 +35,6 @@ Visão geral do projeto, um pouco das tecnologias usadas.
 - [Express-async-errors](https://www.npmjs.com/package/express-async-errors)
 - [Pg](https://www.npmjs.com/package/pg)
 - [Dotenv](https://www.npmjs.com/package/dotenv)
-
-A URL base da aplicação: https://localhost:3000
 
 ---
 
