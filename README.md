@@ -35,7 +35,7 @@ Visão geral do projeto, um pouco das tecnologias usadas.
 - [Pg](https://www.npmjs.com/package/pg)
 - [Dotenv](https://www.npmjs.com/package/dotenv)
 
-A URL base da aplicação (deploy) : https://livelivingapi.onrender.com
+A URL base da aplicação: https://localhost:3000
 
 ---
 
